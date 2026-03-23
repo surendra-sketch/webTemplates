@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lumina - Next Gen Workspace</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              background: 'rgb(var(--background) / <alpha-value>)',
+              foreground: 'rgb(var(--foreground) / <alpha-value>)',
+              primary: 'rgb(var(--primary) / <alpha-value>)',
+              secondary: 'rgb(var(--secondary) / <alpha-value>)',
+              accent: 'rgb(var(--accent) / <alpha-value>)',
+              card: 'rgb(var(--card) / <alpha-value>)',
+              'card-foreground': 'rgb(var(--card-foreground) / <alpha-value>)',
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      :root {
+        --background: 15 23 42;
+        --foreground: 248 250 252;
+        --primary: 59 130 246;
+        --secondary: 139 92 246;
+        --accent: 6 182 212;
+        --card: 30 41 59;
+        --card-foreground: 241 245 249;
+      }
+
+      /* Theme: Cyber (Default) - handled by root but explicit here for clarity */
+      [data-theme='cyber'] {
+        --background: 15 23 42;     /* slate-900 */
+        --foreground: 248 250 252;  /* slate-50 */
+        --primary: 59 130 246;      /* blue-500 */
+        --secondary: 168 85 247;    /* purple-500 */
+        --accent: 34 211 238;       /* cyan-400 */
+        --card: 30 41 59;           /* slate-800 */
+        --card-foreground: 226 232 240;
+      }
+
+      /* Theme: Sunset */
+      [data-theme='sunset'] {
+        --background: 24 10 10;     /* dark red/brown */
+        --foreground: 255 241 242;  /* rose-50 */
+        --primary: 244 63 94;       /* rose-500 */
+        --secondary: 249 115 22;    /* orange-500 */
+        --accent: 252 211 77;       /* amber-300 */
+        --card: 44 15 20;           
+        --card-foreground: 255 228 230;
+      }
+
+      /* Theme: Ocean */
+      [data-theme='ocean'] {
+        --background: 6 20 25;      /* dark cyan/black */
+        --foreground: 236 254 255;  /* cyan-50 */
+        --primary: 6 182 212;       /* cyan-500 */
+        --secondary: 59 130 246;    /* blue-500 */
+        --accent: 16 185 129;       /* emerald-500 */
+        --card: 12 36 46;           
+        --card-foreground: 207 250 254;
+      }
+
+      /* Theme: Forest */
+      [data-theme='forest'] {
+        --background: 10 20 10;     /* dark green */
+        --foreground: 240 253 244;  /* green-50 */
+        --primary: 34 197 94;       /* green-500 */
+        --secondary: 16 185 129;    /* emerald-500 */
+        --accent: 132 204 22;       /* lime-500 */
+        --card: 20 38 25;           
+        --card-foreground: 220 252 231;
+      }
+
+      body {
+        background-color: rgb(var(--background));
+        color: rgb(var(--foreground));
+        transition: background-color 0.5s ease, color 0.5s ease;
+        overflow-x: hidden;
+      }
+      
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgb(var(--card)); 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgb(var(--primary)); 
+      }
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "react/": "https://aistudiocdn.com/react@^19.2.1/",
+        "react": "https://aistudiocdn.com/react@^19.2.1",
+        "lucide-react": "https://aistudiocdn.com/lucide-react@^0.556.0",
+        "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.25",
+        "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/"
+      }
+    }
+    </script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
